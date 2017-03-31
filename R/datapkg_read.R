@@ -100,6 +100,9 @@ make_field <- function(name = "", type = "string", description = "", format = NU
   #datapkg prefixes strptime format with 'fmt:'
   if(length(format))
     format <- sub("^fmt:", "", format)
+  else
+    format <- ""
+
   switch(type,
     string = col_character(),
     number = col_number(),
